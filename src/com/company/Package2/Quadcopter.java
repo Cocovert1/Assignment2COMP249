@@ -29,6 +29,18 @@ public class Quadcopter extends Helicopter {
                 + this.horsepower + ".";
     }
 
+    public boolean equals(Object a) {
+        boolean isEqual = false;
+        if(a == null) {
+            isEqual = false;
+        }else if (this.getClass() != a.getClass()){
+            isEqual = false;
+        } else if (this.brand.equals(((Quadcopter) a).brand) && this.price == ((Quadcopter) a).price && this.horsepower == ((Quadcopter) a).horsepower && this.num_cylinders == ((Quadcopter) a).num_cylinders && this.creation_year == ((Quadcopter) a).creation_year && this.passenger_capacity == ((Quadcopter) a).passenger_capacity && this.max_fly_speed == ((Quadcopter) a).max_fly_speed) {
+            isEqual =true;
+        }
+        return isEqual;
+    }
+
     public int getMax_fly_speed() {
         return max_fly_speed;
     }

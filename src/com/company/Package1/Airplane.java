@@ -6,9 +6,9 @@ public class Airplane {
     protected int horsepower;
 
     public Airplane(){
-        brand = "unknown";
-        price = 0;
-        horsepower = 0;
+        brand = "Boeing";
+        price = 100000000;
+        horsepower = 3500;
     }
 
     //copy
@@ -32,7 +32,14 @@ public class Airplane {
 
     public boolean equals(Object a) {
         boolean isEqual = false;
-
+        if(a == null) {
+            isEqual = false;
+        }else if (this.getClass() != a.getClass()){
+            isEqual = false;
+        } else if (this.brand.equals(((Airplane) a).brand) && this.price == ((Airplane) a).price && this.horsepower == ((Airplane) a).horsepower) {
+            isEqual =true;
+        }
+        return isEqual;
     }
 
     public String getBrand() {

@@ -29,6 +29,18 @@ public class Multirotor extends Helicopter {
                 + this.horsepower + ".";
     }
 
+    public boolean equals(Object a) {
+        boolean isEqual = false;
+        if(a == null) {
+            isEqual = false;
+        }else if (this.getClass() != a.getClass()){
+            isEqual = false;
+        } else if (this.brand.equals(((Multirotor) a).brand) && this.price == ((Multirotor) a).price && this.horsepower == ((Multirotor) a).horsepower && this.num_cylinders == ((Multirotor) a).num_cylinders && this.creation_year == ((Multirotor) a).creation_year && this.passenger_capacity == ((Multirotor) a).passenger_capacity && this.num_rotors == ((Multirotor) a).num_rotors) {
+            isEqual =true;
+        }
+        return isEqual;
+    }
+
     public int getNum_rotors() {
         return num_rotors;
     }

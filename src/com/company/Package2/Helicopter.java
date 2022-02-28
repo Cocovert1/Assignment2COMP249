@@ -36,6 +36,18 @@ public class Helicopter extends Airplane {
                 + this.price + ". It has a horsepower of " + this.horsepower + ".";
     }
 
+    public boolean equals(Object a) {
+        boolean isEqual = false;
+        if(a == null) {
+            isEqual = false;
+        }else if (this.getClass() != a.getClass()){
+            isEqual = false;
+        } else if (this.brand.equals(((Helicopter) a).brand) && this.price == ((Helicopter) a).price && this.horsepower == ((Helicopter) a).horsepower && this.num_cylinders == ((Helicopter) a).num_cylinders && this.creation_year == ((Helicopter) a).creation_year && this.passenger_capacity == ((Helicopter) a).passenger_capacity) {
+            isEqual =true;
+        }
+        return isEqual;
+    }
+
     public int getNum_cylinders() {
         return num_cylinders;
     }

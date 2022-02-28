@@ -31,6 +31,18 @@ public class MAV extends UAV {
                 + this.model + ", and of size " + this.size + ".";
     }
 
+    public boolean equals(Object a) {
+        boolean isEqual = false;
+        if(a == null) {
+            isEqual = false;
+        }else if (this.getClass() != a.getClass()){
+            isEqual = false;
+        } else if (this.weight == ((MAV) a).weight && this.price == ((MAV) a).price && this.model.equals(((MAV) a).model) && this.size == ((MAV) a).size) {
+            isEqual =true;
+        }
+        return isEqual;
+    }
+
     public String getModel() {
         return model;
     }

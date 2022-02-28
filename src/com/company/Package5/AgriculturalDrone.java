@@ -31,6 +31,18 @@ public class AgriculturalDrone extends UAV {
                 + ". It has a weight of " + this.weight + ", and a price of " + this.price + ".";
     }
 
+    public boolean equals(Object a) {
+        boolean isEqual = false;
+        if(a == null) {
+            isEqual = false;
+        }else if (this.getClass() != a.getClass()){
+            isEqual = false;
+        } else if (this.weight == ((AgriculturalDrone) a).weight && this.price == ((AgriculturalDrone) a).price && this.brand.equals(((AgriculturalDrone) a).brand) && this.carry_capacity == ((AgriculturalDrone) a).carry_capacity) {
+            isEqual =true;
+        }
+        return isEqual;
+    }
+
     public String getBrand() {
         return brand;
     }

@@ -1,5 +1,7 @@
 package com.company.Package4;
 
+import com.company.Package1.Airplane;
+
 public class UAV {
     protected double weight;
     protected double price;
@@ -23,6 +25,18 @@ public class UAV {
     @Override
     public String toString() {
         return "This UAV has a weight of " + this.weight + ", and a price of " + this.price + ".";
+    }
+
+    public boolean equals(Object a) {
+        boolean isEqual = false;
+        if(a == null) {
+            isEqual = false;
+        }else if (this.getClass() != a.getClass()){
+            isEqual = false;
+        } else if (this.weight == ((UAV) a).weight && this.price == ((UAV) a).price) {
+            isEqual =true;
+        }
+        return isEqual;
     }
 
     public double getWeight() {
