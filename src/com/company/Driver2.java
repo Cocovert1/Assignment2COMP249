@@ -23,6 +23,9 @@ public class Driver2 {
 
     public static void main(String[] args) {
 
+        //welcoming message
+        System.out.println("Welcome to the Flying objects program.");
+
         //creating objects of different classes
         Airplane a1 = null;
         Airplane a2 = new Airplane("Boeing", 100000, 2000);
@@ -80,6 +83,11 @@ public class Driver2 {
         System.out.println();
         System.out.println("Now copying an array of flying objects.");
         copyFlyingObjects(objArr2);
+
+        //closing system and message
+        System.out.println();
+        System.out.println("This has been all we can show you, thank you for watching.");
+        System.exit(0);
 
     }
 
