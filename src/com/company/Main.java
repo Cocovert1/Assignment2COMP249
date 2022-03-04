@@ -28,11 +28,11 @@ public class Main {
         Airplane a3 = new Airplane("Boeing", 100000, 2000);
         Helicopter h1 = new Helicopter("Toyota", 10, 100, 20, 1980, 180);
         Helicopter h2 = new Helicopter("Corola", 300, 250, 15, 2002, 40);
-        Helicopter h3 = new Helicopter("Corola", 300, 250, 15, 2002, 40);
+        Helicopter h3 = new Helicopter(h2);
         Quadcopter q1 = new Quadcopter("Mercedes", 3000, 600, 50, 2015, 6, 270);
         Quadcopter q2 = new Quadcopter("BMW", 1560, 467, 20, 30, 12, 36);
         Multirotor m1 = new Multirotor("Nissan", 13000, 12000, 120, 1700, 500, 700);
-        Multirotor m2 = new Multirotor("Nissan", 13000, 12000, 120, 1700, 500, 700);
+        Multirotor m2 = new Multirotor(m1);
         UAV u1 = new UAV(1000, 100000);
         UAV u2 = new UAV(2000, 20000000);
         AgriculturalDrone ag1 = new AgriculturalDrone(2000, 20000, "Santa", 230);
