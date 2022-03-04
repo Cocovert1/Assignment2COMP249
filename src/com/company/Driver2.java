@@ -75,6 +75,8 @@ public class Driver2 {
         System.out.print("Array without UAV: ");
         findLeastAndMostExpensiveUAV(objArr2);
 
+        System.out.println();
+        System.out.println("Now copying an array of flying objects.");
         copyFlyingObjects(objArr2);
 
     }
@@ -172,12 +174,20 @@ public class Driver2 {
         //prints out the toString of every object in array
         System.out.println("Original:");
         for (int i=0; i< arr.length; i++) {
+            if(arr[i] == null){
+                continue;
+            }
             System.out.print(arr[i].toString() + "\n");
         }
+
+        System.out.println();
 
         //prints out the toString of every object in the copy array
         System.out.println("CopyArray:");
         for (int i=0; i< copyArray.length; i++) {
+            if(arr[i] == null){
+                continue;
+            }
             System.out.print(copyArray[i].toString() + "\n");
         }
 
