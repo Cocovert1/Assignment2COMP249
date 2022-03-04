@@ -131,7 +131,7 @@ public class Driver2 {
 
     public static void copyFlyingObjects(Object[] arr){
 
-        // define an array copyArray to copy contents of intArray
+        //make a copy array of the same size
         int copyArray[] = new int[arr.length];
 
         }
