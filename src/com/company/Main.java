@@ -10,6 +10,7 @@ and finding the least and most expensive drone in an array of objects.
 package com.company;
 
 //importing the packages
+
 import com.company.Package1.Airplane;
 import com.company.Package2.Helicopter;
 import com.company.Package2.Quadcopter;
@@ -18,6 +19,14 @@ import com.company.Package4.UAV;
 import com.company.Package5.AgriculturalDrone;
 import com.company.Package5.MAV;
 
+/**
+ * Main represents the driver class. It gives a welcome message, generates objects of different classes, prints their toString,
+ * validates the equals method, and the findLeastandMostExpensive method.
+ *
+ * @author Alessio Cipriano-Kardous
+ * @author Nicholas Pop
+ * @version 1.1
+ */
 public class Main {
 
     public static void main(String[] args) {
@@ -54,8 +63,8 @@ public class Main {
 
         //printing out the toString of at least 15 objects
         System.out.println("Printing out the toStrings: ");
-        for(int i = 0; i < objArr.length; i++){
-            if(objArr[i] == null){
+        for (int i = 0; i < objArr.length; i++) {
+            if (objArr[i] == null) {
                 continue;
             }
             System.out.println(objArr[i].toString());
@@ -85,15 +94,21 @@ public class Main {
 
     }
 
-    public static void findLeastAndMostExpensiveUAV(Object[] arr){
+    /**
+     * This method will iterate through an array of objects, find all the UAV objects and find the least and most expensive
+     * UAV objects.
+     *
+     * @param arr is the array of objects that is to be iterated through
+     */
+    public static void findLeastAndMostExpensiveUAV(Object[] arr) {
         //Drone counter
         int counter = 0;
         //for loops that check for drone classes in array
-        for(Object o : arr){
-            if(o == null){ //skips for a null object
+        for (Object o : arr) {
+            if (o == null) { //skips for a null object
                 continue;
             }
-            if(o.getClass() == UAV.class || o.getClass() == MAV.class || o.getClass() == AgriculturalDrone.class){
+            if (o.getClass() == UAV.class || o.getClass() == MAV.class || o.getClass() == AgriculturalDrone.class) {
                 counter++;
             }
         }
@@ -101,32 +116,32 @@ public class Main {
         UAV[] uavArr = new UAV[counter];
 
         //if there is 1 drone class in array
-        if(counter == 1){
-            for(Object o : arr){ //checks which type of drone there is and puts it in the drone array
-                if(o.getClass() == UAV.class){
+        if (counter == 1) {
+            for (Object o : arr) { //checks which type of drone there is and puts it in the drone array
+                if (o.getClass() == UAV.class) {
                     uavArr[0] = (UAV) o;
-                } else if(o.getClass() == MAV.class){
+                } else if (o.getClass() == MAV.class) {
                     uavArr[0] = (MAV) o;
-                } else if(o.getClass() == AgriculturalDrone.class){
+                } else if (o.getClass() == AgriculturalDrone.class) {
                     uavArr[0] = (AgriculturalDrone) o;
                 }
             }
             System.out.println(uavArr[0].toString() + " It is the least and most expensive UAV."); //prints the single drone object
 
             //if there are more than 1 drone classes in array
-        } else if (counter > 1){
+        } else if (counter > 1) {
             int countercounter = 0;
-            for(int i = 0; i < arr.length; i++){ //checks which type of drone there is and puts it in the drone array
-                if(arr[i] == null){ //skips for a null object
+            for (int i = 0; i < arr.length; i++) { //checks which type of drone there is and puts it in the drone array
+                if (arr[i] == null) { //skips for a null object
                     continue;
                 }
-                if(arr[i].getClass() == UAV.class){
+                if (arr[i].getClass() == UAV.class) {
                     uavArr[countercounter] = (UAV) arr[i];
                     countercounter++;
-                } else if(arr[i].getClass() == MAV.class){
+                } else if (arr[i].getClass() == MAV.class) {
                     uavArr[countercounter] = (MAV) arr[i];
                     countercounter++;
-                } else if(arr[i].getClass() == AgriculturalDrone.class){
+                } else if (arr[i].getClass() == AgriculturalDrone.class) {
                     uavArr[countercounter] = (AgriculturalDrone) arr[i];
                     countercounter++;
                 }
@@ -134,26 +149,26 @@ public class Main {
 
             //finds the max price drone
             double maxValue = uavArr[0].getPrice();
-            for(int i = 1; i < uavArr.length; i++){
-                if(uavArr[i].getPrice() > maxValue){
+            for (int i = 1; i < uavArr.length; i++) {
+                if (uavArr[i].getPrice() > maxValue) {
                     maxValue = uavArr[i].getPrice();
                 }
             }
 
             //finds the min price drone
             double minValue = uavArr[0].getPrice();
-            for(int i = 1; i < uavArr.length; i++){
-                if(uavArr[i].getPrice() < minValue){
+            for (int i = 1; i < uavArr.length; i++) {
+                if (uavArr[i].getPrice() < minValue) {
                     minValue = uavArr[i].getPrice();
                 }
             }
 
             //sorts the drone array to find
-            for(int i = 0; i < uavArr.length; i++){
-                if(uavArr[i].getPrice() == maxValue){
+            for (int i = 0; i < uavArr.length; i++) {
+                if (uavArr[i].getPrice() == maxValue) {
                     System.out.println(uavArr[i].toString() + " This is max");
                 }
-                if(uavArr[i].getPrice() == minValue){
+                if (uavArr[i].getPrice() == minValue) {
                     System.out.println(uavArr[i].toString() + " This is min");
                 }
             }
