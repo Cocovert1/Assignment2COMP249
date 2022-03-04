@@ -26,13 +26,18 @@ public class Main {
         Airplane a1 = null;
         Airplane a2 = new Airplane("Boeing", 100000, 2000);
         Airplane a3 = new Airplane("Boeing", 100000, 2000);
+        Airplane a4 = new Airplane(a3);
         Helicopter h1 = new Helicopter("Toyota", 10, 100, 20, 1980, 180);
         Helicopter h2 = new Helicopter("Corola", 300, 250, 15, 2002, 40);
         Helicopter h3 = new Helicopter(h2);
+        Helicopter h4 = null;
         Quadcopter q1 = new Quadcopter("Mercedes", 3000, 600, 50, 2015, 6, 270);
         Quadcopter q2 = new Quadcopter("BMW", 1560, 467, 20, 30, 12, 36);
+        Quadcopter q3 = new Quadcopter(q1);
         Multirotor m1 = new Multirotor("Nissan", 13000, 12000, 120, 1700, 500, 700);
         Multirotor m2 = new Multirotor(m1);
+        Multirotor m3 = new Multirotor("Boetang", 16000, 12500, 220, 1700, 500, 600);
+        Multirotor m4 = null;
         UAV u1 = new UAV(1000, 100000);
         UAV u2 = new UAV(2000, 20000000);
         AgriculturalDrone ag1 = new AgriculturalDrone(2000, 20000, "Santa", 230);
@@ -41,10 +46,33 @@ public class Main {
         MAV mav2 = new MAV(5200, 26780, "Delta", 730);
 
         //making an array with the different objects
-        Object[] objArr = {a1, a2, a3, h1, h2, h3, q1, q2, m1, m2, u1, u2, ag1, ag2, mav1, mav2};
-        Object[] objArr2 = {a2, a3, h1, h2, q1, m1, mav1, u2};
+        Object[] objArr = {a1, a2, a3, h1, h2, h3, q1, q2, m1, m2, m3, u1, u2, ag1, ag2, mav1, mav2}; //array with UAV
+        Object[] objArr2 = {a1, a2, a3, a4, h1, h2, h3, h4, q1, q2, q3, m1, m2, m3, m4}; //array without UAV
 
+        //printing out the toString of at least 15 objects
+        System.out.println("Printing out the toStrings: ");
+        for(int i = 0; i < objArr.length; i++){
+            if(objArr[i] == null){
+                continue;
+            }
+            System.out.println(objArr[i].toString());
+        }
+
+        System.out.println();
+
+        System.out.println("Testing out the equals method: ");
+        System.out.println(m1.equals(q3));
+        System.out.println(q1.equals(q2));
+        System.out.println(a2.equals(a3));
+
+        System.out.println();
+
+        //finding the least and most expensive UAV from an array with and without a UAV class
+        System.out.println("Finding the least and most expensive UAV in array: ");
+        System.out.print("Array with UAV: ");
         findLeastAndMostExpensiveUAV(objArr);
+        System.out.print("Array without UAV: ");
+        findLeastAndMostExpensiveUAV(objArr2);
 
     }
 
@@ -123,7 +151,7 @@ public class Main {
 
             //if there are no drones in array
         } else {
-            System.out.println("none");
+            System.out.println("There are no UAV objects in this array");
 
         }
 
