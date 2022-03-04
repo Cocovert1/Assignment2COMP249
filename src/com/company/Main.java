@@ -60,6 +60,7 @@ public class Main {
 
         System.out.println();
 
+        //testing the equals method
         System.out.println("Testing out the equals method: ");
         System.out.println(m1.equals(q3));
         System.out.println(q1.equals(q2));

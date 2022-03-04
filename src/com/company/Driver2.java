@@ -61,6 +61,7 @@ public class Driver2 {
 
         System.out.println();
 
+        //testing the equals method
         System.out.println("Testing out the equals method: ");
         System.out.println(m1.equals(q3));
         System.out.println(q1.equals(q2));
@@ -75,6 +76,7 @@ public class Driver2 {
         System.out.print("Array without UAV: ");
         findLeastAndMostExpensiveUAV(objArr2);
 
+        //testing out the copyFlyingObjects method
         System.out.println();
         System.out.println("Now copying an array of flying objects.");
         copyFlyingObjects(objArr2);
