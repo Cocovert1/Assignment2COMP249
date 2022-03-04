@@ -44,7 +44,9 @@ public class Driver2 {
         Object[] objArr = {a1, a2, a3, h1, h2, h3, q1, q2, m1, m2, u1, u2, ag1, ag2, mav1, mav2};
         Object[] objArr2 = {a2, a3, h1, h2, q1, m1, mav1, u2};
 
-        findLeastAndMostExpensiveUAV(objArr);
+        //findLeastAndMostExpensiveUAV(objArr);
+
+        copyFlyingObjects(objArr2);
 
     }
 
@@ -132,9 +134,24 @@ public class Driver2 {
     public static void copyFlyingObjects(Object[] arr){
 
         //make a copy array of the same size
-        int copyArray[] = new int[arr.length];
+        Object copyArray[] = new Object[arr.length];
 
+        for(int i = 0; i < arr.length; i++) {
+            copyArray[i] = arr[i];
+        }
+
+        //prints out the toString of every object in array
+        System.out.println("Original:");
+        for (int i=0; i< arr.length; i++) {
+            System.out.print(arr[i].toString() + "\n");
+        }
+
+        //prints out the toString of every object in the copy array
+        System.out.println("CopyArray:");
+        for (int i=0; i< copyArray.length; i++) {
+            System.out.print(copyArray[i].toString() + "\n");
         }
 
     }
-}
+
+    }
