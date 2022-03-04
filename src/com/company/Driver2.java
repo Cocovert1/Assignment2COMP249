@@ -3,8 +3,9 @@
 // Written by: Nicholas Pop 40210550 and Alessio Cipriano-Kardous 40210549
 // -----------------------------------------------------
 /*
-This class initializes 16 objects of different classes. It will run a series of tasks like finding its they're equal, copying
-and finding the least and most expensive drone in an array of objects.
+This driver initializes 16 objects of different classes. It will run a series of tasks like finding its they're equal, copying
+and finding the least and most expensive drone in an array of objects. This driver also has the copyFlyingObjects method that will
+copy and array of objects.
  */
 
 package com.company;
